@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import styles from './App.modules.css';
 import { Cards, Chart, CountryPicker } from './components';
 import { fetchData } from './api';
+import styles from './App.module.css';
 class App extends Component {
   state = {
     data: {},
@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     const { data } = this.state;
     return (
-      <div className='container'>
+      <div className={styles.container}>
         <Cards data={data}/>
         <CountryPicker />
         <Chart />
