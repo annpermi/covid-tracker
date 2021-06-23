@@ -14,11 +14,8 @@ function Chart() {
         const fetchAPI = async () => {
             setDailyData( await fetchDailyData()); /* the return promise because  its async*/
         }
-
-        console.log(dailyData)
-
         fetchAPI();
-    });
+    }, []);
 
     const lineChart = (
         /* if we don't have the first day of the daily data available */
@@ -27,14 +24,14 @@ function Chart() {
         <Line 
             data={{
                 /* map return the date */
-                labels: dailyData(({date}) => date),
+                labels: dailyData.map(({date}) => date),
                 datasets: [{
-                    data: dailyData(({confirmed}) => confirmed),
+                    data: dailyData.map(({confirmed}) => confirmed),
                     label: 'Infected',
                     borderColor: '#3333ff',
                     fill: true,
                 }, {
-                    data: dailyData(({deaths}) => deaths),
+                    data: dailyData.map(({deaths}) => deaths),
                     label: 'Deaths',
                     borderColor: 'red',
                     backgroundColor: 'rgba(255, 0, 0, 0.5',
