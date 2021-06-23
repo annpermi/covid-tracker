@@ -10,7 +10,7 @@
 
 > React CountUp,
 
-> React Hook,
+> React Hooks,
 
 > Axios,
 
