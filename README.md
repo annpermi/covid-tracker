@@ -12,6 +12,8 @@
 
 > React Hooks,
 
+> Charts.js,
+
 > Axios,
 
 > Material-UI,
